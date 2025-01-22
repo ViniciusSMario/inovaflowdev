@@ -617,13 +617,13 @@
         <!-- Testimonial End -->
 
         <!-- Contact Start -->
-        <section class="container-fluid py-5 mb-5" id="contact">
+        <section class="container-fluid " id="contact">
             <div class="container">
                 <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
                     <h5 class="text-primary">Ficou interessado?</h5>
                     <h1 class="mb-3">Entre em contato com a gente</h1>
                 </div>
-                <div class="contact-detail position-relative p-5">
+                <div class="contact-detail position-relative p-3">
                     <div class="row g-5 mb-5 justify-content-center">
                         <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".3s">
                             <div class="d-flex bg-light p-3 rounded">
@@ -660,26 +660,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row g-5">
-                        <div class="col-lg-8 offset-2 wow fadeIn" data-wow-delay=".5s">
-                            <form class="p-5 rounded contact-form" id="contact-form">
-                                <div class="mb-4">
-                                    <input type="text" id="name" name="name" class="form-control border-0 py-3" placeholder="Nome">
-                                </div>
-                                <div class="mb-4">
-                                    <input type="email" id="email" name="email" class="form-control border-0 py-3" placeholder="E-mail">
-                                </div>
-                                <div class="mb-4">
-                                    <input type="text" id="subject" name="subject" class="form-control border-0 py-3" placeholder="Assunto">
-                                </div>
-                                <div class="mb-4">
-                                    <textarea class="w-100 form-control border-0 py-3" id="message" name="message" rows="6" cols="10" placeholder="Mensagem"></textarea>
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn bg-primary text-white py-3 px-5" type="submit">Enviar Mensagem</button>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="p-5">
+                        
                     </div>
                 </div>
             </div> 
@@ -884,39 +866,6 @@
                     cookieBanner.style.display = "none";
                 });
             });
-
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                const formData = {
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    subject: document.getElementById('subject').value,
-                    message: document.getElementById('message').value
-                };
-
-                const scriptURL = 'https://script.google.com/macros/s/AKfycbyQuhhZNhYIHDp6pW4M9POZny7q1PLeTR_5fwIahVAhblMxwV736DrNGMgyxEe7FRKf/exec';
-
-                fetch(scriptURL, {
-                    method: 'POST',
-                    body: JSON.stringify(formData),
-                    headers: { 'Content-Type': 'application/json' },
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        alert(data.message);
-                        document.getElementById('contact-form').reset();
-                    } else {
-                        alert('Erro ao enviar a mensagem.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Erro:', error);
-                    alert('Erro ao enviar a mensagem. Tente novamente.');
-                });
-            });
-
         </script>
     </body>
 </html>
