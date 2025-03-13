@@ -423,7 +423,7 @@
 .project-img {
     position: relative;
     padding: 15px;
-    width: 375px;
+    width: 100%;
 }
 
 .project-img::before {
